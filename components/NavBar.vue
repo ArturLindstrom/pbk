@@ -1,13 +1,11 @@
 <template>
-<div>
     <nav>
-        <ul>
-            <li><nuxt-link to="/"><img class="nav-img" src="assets/pbk.svg"></nuxt-link></li>
-            <li><nuxt-link to="/about">Om Powerballadkören</nuxt-link></li>
-            <li><nuxt-link to="/contact">Kontakt</nuxt-link></li>
-        </ul>
+        <div class="nav-items">
+          <nav-ball link='/about'>Om oss</nav-ball>
+          <nav-ball :img=true link='/'><img src="assets/pbk.svg" class="nav-img"></nav-ball>
+          <nav-ball link='/contact'>Kontakt</nav-ball>
+        </div>
     </nav>
-</div>
 </template>
 
 <script setup>
@@ -18,36 +16,21 @@
   nav {
     display: flex;
     justify-content: center;
-    height: 10vmin;
+    height: 25vh;
+    background: none;
   }
 
 
-  ul {
-    appearance: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    list-style: none;
+  .nav-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    width: 100%;
   }
 
   .nav-img {
-    height: 8vmin;
+    width: 5rem;
+    transform: translateY(0.5rem)
   }
 
-  a {
-    text-decoration: none;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 2rem;
-    color: #000;
-    &:visited{
-      color: #000;
-    }
-  }
-  a.router-link-exact-active{
-    color: #52BDA9;
-    font-size: 2.5rem;
-    
-  
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-
+  <main-component />
 </template>
 
 <script setup>
